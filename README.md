@@ -6,6 +6,8 @@
 [![LangGraph](https://img.shields.io/badge/AI-LangGraph_Orchestrator-FF6F61.svg)](https://langchain.com/)
 
 An enterprise-grade, full-stack **AI-Powered Banking Fraud Detection System** with modern fintech UI (Stripe / Visa / Mastercard dashboard style). Powered by dual Machine Learning models, a 4-Agent LangGraph Orchestration Engine, ChromaDB Vector DB compliance retrieval, LLM-as-a-Judge validation, 2FA Twilio OTP authorization, Human Security Triage, and automated PDF audit report generation.
+<img width="965" height="652" alt="image" src="https://github.com/user-attachments/assets/59734b55-9744-4945-97ba-a8d0debc0525" />
+
 
 ---
 
