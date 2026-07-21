@@ -2,7 +2,10 @@ import asyncio
 import logging
 from typing import Dict, Any
 from app.config import settings
-from langchain_openai import ChatOpenAI
+try:
+    from langchain_openai import ChatOpenAI
+except ImportError:
+    ChatOpenAI = None
 
 logger = logging.getLogger("fraudshield.judge")
 

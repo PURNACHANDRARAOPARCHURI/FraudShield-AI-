@@ -5,7 +5,10 @@ from sqlalchemy.orm import Session
 from app.config import settings
 from app.chroma_store import chroma_store
 from app.models import HistoricalFraudLog
-from langchain_openai import ChatOpenAI
+try:
+    from langchain_openai import ChatOpenAI
+except ImportError:
+    ChatOpenAI = None
 
 # Explicit LangGraph imports
 try:
