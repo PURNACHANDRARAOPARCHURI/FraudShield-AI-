@@ -100,10 +100,10 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({ onSubmit, load
         <div>
           <div className="flex items-center space-x-2">
             <DollarSign className="w-5 h-5 text-cyan-400" />
-            <h2 className="text-lg font-bold text-white">Analyze Banking Transaction</h2>
+            <h2 className="text-lg font-bold text-white">Transaction Telemetry & Vector Analysis</h2>
           </div>
           <p className="text-xs text-slate-400 mt-1">
-            Input transaction details for real-time Dual ML & LangGraph Multi-Agent Fraud Assessment.
+            Input transaction parameters for real-time Dual Statistical Models & Multi-Stage Concurrent Heuristic Evaluation.
           </p>
         </div>
 
@@ -329,12 +329,12 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({ onSubmit, load
             {loading ? (
               <>
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                <span>Executing LangGraph Pipeline...</span>
+                <span>Executing Multi-Stage Heuristic Pipeline...</span>
               </>
             ) : (
               <>
                 <Sparkles className="w-4 h-4 text-cyan-200" />
-                <span>Run Enterprise AI Fraud Pipeline</span>
+                <span>Execute Quantitative Risk Assessment Pipeline</span>
               </>
             )}
           </button>

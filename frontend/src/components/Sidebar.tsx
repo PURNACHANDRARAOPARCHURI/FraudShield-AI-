@@ -15,10 +15,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   activeTab, setActiveTab, collapsed, setCollapsed, pendingReviewCount
 }) => {
   const navItems = [
-    { id: 'analyze', label: 'Transaction Analyzer', icon: Send, badge: null },
-    { id: 'workflow', label: 'LangGraph Pipeline', icon: Network, badge: '4 Agents' },
-    { id: 'human-review', label: 'Human Triage Queue', icon: AlertTriangle, badge: pendingReviewCount > 0 ? pendingReviewCount : null },
-    { id: 'dashboard', label: 'Admin Dashboard', icon: LayoutDashboard, badge: null },
+    { id: 'analyze', label: 'Transaction Telemetry', icon: Send, badge: null },
+    { id: 'workflow', label: 'Inspection Pipeline', icon: Network, badge: '4 Engines' },
+    { id: 'human-review', label: 'Security Triage Queue', icon: AlertTriangle, badge: pendingReviewCount > 0 ? pendingReviewCount : null },
+    { id: 'dashboard', label: 'Analytics Dashboard', icon: LayoutDashboard, badge: null },
     { id: 'thresholds', label: 'Threshold Policies', icon: Sliders, badge: null },
   ];
 
@@ -76,8 +76,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             AU
           </div>
           <div className="flex-1 truncate">
-            <p className="text-xs font-semibold text-white truncate">Security Admin</p>
-            <p className="text-[10px] text-slate-400 truncate">admin@fraudshield.ai</p>
+            <p className="text-xs font-semibold text-white truncate">Security Officer</p>
+            <p className="text-[10px] text-slate-400 truncate">security@fraudshield.internal</p>
           </div>
         </div>
       )}

@@ -126,7 +126,7 @@ export const HumanReviewConsole: React.FC<HumanReviewConsoleProps> = ({ transact
 
               {/* Security Reviewer Notes */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">Human Reviewer Audit Notes</label>
+                <label className="block text-xs font-medium text-slate-300 mb-1">Security Analyst & Triage Audit Notes</label>
                 <textarea
                   rows={2}
                   value={notes}

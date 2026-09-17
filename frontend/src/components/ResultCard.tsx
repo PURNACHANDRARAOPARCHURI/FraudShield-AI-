@@ -101,9 +101,9 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
           </div>
         </div>
 
-        {/* Card 3: Dual ML Models */}
+        {/* Card 3: Dual Statistical Models */}
         <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Dual ML Engine</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Dual Statistical Layer</span>
           <div className="grid grid-cols-2 gap-2 my-1">
             <div>
               <span className="text-[10px] text-slate-400 block">Random Forest</span>
@@ -114,7 +114,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
               <span className="text-sm font-bold text-indigo-400">{(result.if_score * 100).toFixed(1)}%</span>
             </div>
           </div>
-          <span className="text-[10px] text-slate-400">Random Forest + Anomaly Isolation</span>
+          <span className="text-[10px] text-slate-400">Ensemble Prob. + Outlier Metric</span>
         </div>
 
         {/* Card 4: Initial Threshold Gate */}
@@ -124,24 +124,24 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
             <span className="text-xs font-semibold text-amber-300 block">{result.initial_threshold_decision}</span>
             <span className="text-[10px] text-slate-400">Gate threshold setting: &lt; 0.40</span>
           </div>
-          <span className="text-[10px] text-slate-400">Fast Path / Full Orchestration</span>
+          <span className="text-[10px] text-slate-400">Fast Path / Multi-Stage Pipeline</span>
         </div>
       </div>
 
       {/* AGENT SCORES BREAKDOWN & COMPONENT CONTRIBUTIONS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left: 4 LangGraph Agent Scores */}
+        {/* Left: 4 Concurrent Subsystem Scores */}
         <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
           <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center space-x-2">
             <Cpu className="w-4 h-4" />
-            <span>LangGraph 4 Multi-Agent Scores</span>
+            <span>Concurrent Subsystem Scores</span>
           </h4>
 
           <div className="space-y-2.5">
-            {/* Agent 1 */}
+            {/* Subsystem 1 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Agent 1: Behavior Analysis</span>
+                <span className="text-slate-300 font-medium">Subsystem 1: Behavioral Telemetry</span>
                 <span className="text-cyan-400 font-bold">{(result.agent_scores.behavior_score * 100).toFixed(1)}%</span>
               </div>
               <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
@@ -149,10 +149,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
               </div>
             </div>
 
-            {/* Agent 2 */}
+            {/* Subsystem 2 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Agent 2: Historical Fraud (PostgreSQL)</span>
+                <span className="text-slate-300 font-medium">Subsystem 2: Historical Ledger (PostgreSQL)</span>
                 <span className="text-indigo-400 font-bold">{(result.agent_scores.historical_score * 100).toFixed(1)}%</span>
               </div>
               <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
@@ -160,10 +160,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
               </div>
             </div>
 
-            {/* Agent 3 */}
+            {/* Subsystem 3 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Agent 3: Knowledge Retrieval (ChromaDB)</span>
+                <span className="text-slate-300 font-medium">Subsystem 3: Policy Compliance Matrix</span>
                 <span className="text-purple-400 font-bold">{(result.agent_scores.knowledge_score * 100).toFixed(1)}%</span>
               </div>
               <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
@@ -171,10 +171,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
               </div>
             </div>
 
-            {/* Agent 4 */}
+            {/* Subsystem 4 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Agent 4: Rule Engine Agent</span>
+                <span className="text-slate-300 font-medium">Subsystem 4: Boundary Constraints Engine</span>
                 <span className="text-rose-400 font-bold">{(result.agent_scores.rule_score * 100).toFixed(1)}%</span>
               </div>
               <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
@@ -188,7 +188,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
         <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
           <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center space-x-2">
             <Activity className="w-4 h-4" />
-            <span>Risk Score Component Contribution (%)</span>
+            <span>Composite Risk Factor Contribution (%)</span>
           </h4>
 
           <div className="space-y-2">
@@ -207,13 +207,13 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
         </div>
       </div>
 
-      {/* LLM-AS-A-JUDGE REASONING BOX */}
+      {/* DECISION VALIDATOR REASONING BOX */}
       <div className="p-4 rounded-xl bg-indigo-950/20 border border-indigo-800/60 space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Scale className="w-4 h-4 text-purple-400" />
             <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">
-              LLM-as-a-Judge Reasoning & Guardrail Audit
+              Multi-Criteria Algorithmic Decision Validator & Audit
             </h4>
           </div>
           <span className="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-2 py-0.5 rounded-full">
@@ -223,24 +223,24 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-[11px] text-slate-300">
           <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Hallucinations</span>
-            <span className="text-emerald-400 font-bold">✓ PASSED</span>
+            <span className="block text-[10px] text-slate-400">Invariance Check</span>
+            <span className="text-emerald-400 font-bold">\u2713 PASSED</span>
           </div>
           <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
             <span className="block text-[10px] text-slate-400">Reasoning</span>
-            <span className="text-emerald-400 font-bold">✓ VALID</span>
+            <span className="text-emerald-400 font-bold">\u2713 VALID</span>
           </div>
           <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
             <span className="block text-[10px] text-slate-400">Evidence Check</span>
-            <span className="text-emerald-400 font-bold">✓ VERIFIED</span>
+            <span className="text-emerald-400 font-bold">\u2713 VERIFIED</span>
           </div>
           <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Guardrails</span>
-            <span className="text-emerald-400 font-bold">✓ COMPLIANT</span>
+            <span className="block text-[10px] text-slate-400">Constraints</span>
+            <span className="text-emerald-400 font-bold">\u2713 COMPLIANT</span>
           </div>
           <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center col-span-2 md:col-span-1">
-            <span className="block text-[10px] text-slate-400">RBI Regulatory</span>
-            <span className="text-emerald-400 font-bold">✓ ALIGNED</span>
+            <span className="block text-[10px] text-slate-400">Regulatory Policy</span>
+            <span className="text-emerald-400 font-bold">\u2713 ALIGNED</span>
           </div>
         </div>
 

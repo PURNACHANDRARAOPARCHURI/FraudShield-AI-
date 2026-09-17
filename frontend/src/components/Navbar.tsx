@@ -24,14 +24,14 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, activeTab
           <div>
             <div className="flex items-center space-x-2">
               <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">
-                FraudShield<span className="text-cyan-500">.AI</span>
+                FraudShield<span className="text-cyan-500"> Engine</span>
               </h1>
               <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wider text-cyan-400 bg-cyan-950/80 border border-cyan-800/60 rounded-full uppercase">
-                Enterprise v1.0
+                Telemetry v1.0
               </span>
             </div>
             <p className="text-xs text-slate-400 hidden sm:block">
-              Multi-Agent LangGraph & ML Protection Engine
+              Concurrent Heuristic & Statistical Anomaly Detection System
             </p>
           </div>
         </div>
@@ -45,12 +45,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, activeTab
           <div className="w-px h-3 bg-slate-800"></div>
           <div className="flex items-center space-x-2 text-cyan-400 font-medium">
             <Cpu className="w-3.5 h-3.5" />
-            <span>LangGraph: 4 Agents Active</span>
+            <span>Pipeline: 4 Concurrent Engines Active</span>
           </div>
           <div className="w-px h-3 bg-slate-800"></div>
           <div className="flex items-center space-x-2 text-indigo-400 font-medium">
             <Database className="w-3.5 h-3.5" />
-            <span>ChromaDB Vector Store</span>
+            <span>Vectorized Compliance Matrix</span>
           </div>
         </div>
 

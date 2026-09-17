@@ -53,16 +53,16 @@ export function App() {
       
       if (response.final_decision === 'OTP_REQUIRED') {
         setShowOtpModal(true);
-        setToastMsg({ type: 'info', text: 'Risk Score requires 2FA OTP verification. SMS dispatched!' });
+        setToastMsg({ type: 'info', text: 'Composite risk score mandates secondary 2FA cryptographic verification.' });
       } else if (response.final_decision === 'HUMAN_REVIEW') {
-        setToastMsg({ type: 'error', text: 'High Risk Score (> 0.75)! Dispatched to Human Review Security Triage.' });
+        setToastMsg({ type: 'error', text: 'High Risk Score (> 0.75)! Dispatched to Security Triage Queue.' });
       } else {
-        setToastMsg({ type: 'success', text: 'Transaction Approved successfully with low risk score.' });
+        setToastMsg({ type: 'success', text: 'Transaction Cleared successfully with baseline risk score.' });
       }
 
       loadData();
     } catch (err: any) {
-      setToastMsg({ type: 'error', text: err.message || 'Error executing transaction analysis pipeline.' });
+      setToastMsg({ type: 'error', text: err.message || 'Error executing quantitative risk evaluation pipeline.' });
     } finally {
       setLoading(false);
     }

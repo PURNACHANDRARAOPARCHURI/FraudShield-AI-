@@ -51,10 +51,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ stats, onRefresh
         <div>
           <h2 className="text-xl font-bold text-white flex items-center space-x-2">
             <BarChart3 className="w-6 h-6 text-cyan-400" />
-            <span>Enterprise AI Fraud Analytics & Dashboard</span>
+            <span>Enterprise Quantitative Risk Analytics & Telemetry</span>
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Real-time monitoring, AI agent contributions, and threshold control configuration.
+            Real-time telemetry monitoring, heuristic subsystem contributions, and threshold policy configuration.
           </p>
         </div>
 
@@ -205,7 +205,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ stats, onRefresh
                 className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-cyan-500"
               />
               <p className="text-[11px] text-slate-400">
-                Transactions with risk below <span className="text-cyan-400 font-bold">{initThresh.toFixed(2)}</span> skip LangGraph and approve immediately.
+                Transactions with risk below <span className="text-cyan-400 font-bold">{initThresh.toFixed(2)}</span> trigger fast-path immediate clearance.
               </p>
             </div>
 
@@ -213,7 +213,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ stats, onRefresh
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <label className="font-semibold text-slate-200">
-                  High-Risk Human Review Triage Threshold
+                  High-Risk Security Triage Threshold
                 </label>
                 <span className="font-mono font-bold text-rose-400 text-sm">{highThresh.toFixed(2)}</span>
               </div>
@@ -227,7 +227,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ stats, onRefresh
                 className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-rose-500"
               />
               <p className="text-[11px] text-slate-400">
-                Transactions with risk above <span className="text-rose-400 font-bold">{highThresh.toFixed(2)}</span> are dispatched directly to the Human Review Console.
+                Transactions with risk above <span className="text-rose-400 font-bold">{highThresh.toFixed(2)}</span> are dispatched directly to the Security Triage Console.
               </p>
             </div>
 

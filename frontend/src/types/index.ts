@@ -14,12 +14,13 @@ export interface TransactionInput {
   description?: string;
 }
 
-export interface AgentScores {
+export interface SubsystemScores {
   behavior_score: number;
   historical_score: number;
   knowledge_score: number;
   rule_score: number;
 }
+export type AgentScores = SubsystemScores;
 
 export interface ComponentContributions {
   random_forest: number;
@@ -30,7 +31,7 @@ export interface ComponentContributions {
   rule_engine: number;
 }
 
-export interface LLMJudgeResult {
+export interface DecisionValidatorResult {
   hallucination_passed: boolean;
   reasoning_passed: boolean;
   evidence_passed: boolean;
@@ -40,6 +41,7 @@ export interface LLMJudgeResult {
   final_verdict: string;
   detailed_explanation: string;
 }
+export type LLMJudgeResult = DecisionValidatorResult;
 
 export interface TransactionResponse {
   transaction_id: string;
