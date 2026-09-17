@@ -12,7 +12,25 @@ import { predictTransaction, fetchDashboardMetrics, fetchTransactions, downloadP
 import { ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('fraudshield_theme');
+      if (saved !== null) return saved === 'dark';
+    } catch (e) {}
+    return true;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+      try { localStorage.setItem('fraudshield_theme', 'dark'); } catch (e) {}
+    } else {
+      root.classList.remove('dark');
+      try { localStorage.setItem('fraudshield_theme', 'light'); } catch (e) {}
+    }
+  }, [darkMode]);
+
   const [activeTab, setActiveTab] = useState<string>('analyze');
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
@@ -84,7 +102,9 @@ export function App() {
   ).length;
 
   return (
-    <div className={`min-h-screen bg-slate-950 text-slate-100 flex flex-col ${darkMode ? 'dark' : ''}`}>
+    <div className={`min-h-screen flex flex-col transition-colors duration-200 ${
+      darkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-slate-100/70 text-slate-900'
+    }`}>
       {/* Top Navbar */}
       <Navbar
         darkMode={darkMode}
@@ -108,16 +128,16 @@ export function App() {
           {/* TOAST BANNER */}
           {toastMsg && (
             <div className={`p-4 rounded-2xl border flex items-center justify-between shadow-xl animate-fadeIn ${
-              toastMsg.type === 'success' ? 'bg-emerald-950/80 border-emerald-800 text-emerald-300' :
-              (toastMsg.type === 'info' ? 'bg-amber-950/80 border-amber-800 text-amber-300' : 'bg-rose-950/80 border-rose-800 text-rose-300')
+              toastMsg.type === 'success' ? 'bg-emerald-50 dark:bg-emerald-950/80 border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300' :
+              (toastMsg.type === 'info' ? 'bg-amber-50 dark:bg-amber-950/80 border-amber-300 dark:border-amber-800 text-amber-800 dark:text-amber-300' : 'bg-rose-50 dark:bg-rose-950/80 border-rose-300 dark:border-rose-800 text-rose-800 dark:text-rose-300')
             }`}>
               <div className="flex items-center space-x-3 text-xs font-semibold">
-                {toastMsg.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-400" />}
-                {toastMsg.type === 'info' && <Sparkles className="w-5 h-5 text-amber-400" />}
-                {toastMsg.type === 'error' && <ShieldAlert className="w-5 h-5 text-rose-400" />}
+                {toastMsg.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />}
+                {toastMsg.type === 'info' && <Sparkles className="w-5 h-5 text-amber-600 dark:text-amber-400" />}
+                {toastMsg.type === 'error' && <ShieldAlert className="w-5 h-5 text-rose-600 dark:text-rose-400" />}
                 <span>{toastMsg.text}</span>
               </div>
-              <button onClick={() => setToastMsg(null)} className="text-slate-400 hover:text-white text-xs font-mono">Dismiss</button>
+              <button onClick={() => setToastMsg(null)} className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white text-xs font-mono">Dismiss</button>
             </div>
           )}
 

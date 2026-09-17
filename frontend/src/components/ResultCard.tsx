@@ -18,18 +18,18 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
   const riskPercent = (result.overall_risk_score * 100).toFixed(1);
 
   return (
-    <div className="glass-panel rounded-2xl p-6 border border-slate-800 space-y-6 shadow-2xl relative">
+    <div className="glass-panel rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-6 shadow-2xl relative">
       {/* HEADER BAR & STATUS BADGE */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-200 dark:border-slate-800">
         <div>
           <div className="flex items-center space-x-3">
-            <h3 className="text-xl font-bold text-white">Transaction Assessment Result</h3>
-            <span className="text-xs font-mono text-cyan-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Transaction Assessment Result</h3>
+            <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 px-2.5 py-1 rounded-md">
               ID: {result.transaction_id}
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
-            Processed in <span className="text-cyan-400 font-semibold">{result.processing_time_ms} ms</span> | Timestamp: {result.timestamp}
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Processed in <span className="text-cyan-600 dark:text-cyan-400 font-semibold">{result.processing_time_ms} ms</span> | Timestamp: {result.timestamp}
           </p>
         </div>
 
@@ -48,12 +48,12 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
           <button
             onClick={() => onDownloadPdf(result.transaction_id)}
             disabled={downloadingPdf}
-            className="flex items-center space-x-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold rounded-xl transition-all"
+            className="flex items-center space-x-2 px-4 py-2 bg-white hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-semibold rounded-xl transition-all shadow-sm"
           >
             {downloadingPdf ? (
-              <div className="w-3.5 h-3.5 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-3.5 h-3.5 border-2 border-cyan-500 dark:border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
             ) : (
-              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <Download className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
             )}
             <span>Generate PDF Audit Report</span>
           </button>
@@ -64,16 +64,16 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {/* Card 1: Final Decision */}
         <div className={`p-4 rounded-xl border flex flex-col justify-between ${
-          isApproved ? 'bg-emerald-950/30 border-emerald-800/80 text-emerald-300' :
-          (isOtp ? 'bg-amber-950/30 border-amber-800/80 text-amber-300' :
-          (isHumanReview ? 'bg-rose-950/30 border-rose-800/80 text-rose-300' : 'bg-red-950/30 border-red-800/80 text-red-300'))
+          isApproved ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-800/80 text-emerald-800 dark:text-emerald-300' :
+          (isOtp ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-300 dark:border-amber-800/80 text-amber-800 dark:text-amber-300' :
+          (isHumanReview ? 'bg-rose-50 dark:bg-rose-950/30 border-rose-300 dark:border-rose-800/80 text-rose-800 dark:text-rose-300' : 'bg-red-50 dark:bg-red-950/30 border-red-300 dark:border-red-800/80 text-red-800 dark:text-red-300'))
         }`}>
           <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">Final Decision</span>
           <div className="my-2 flex items-center space-x-2">
-            {isApproved && <CheckCircle2 className="w-6 h-6 text-emerald-400" />}
-            {isOtp && <KeyRound className="w-6 h-6 text-amber-400" />}
-            {isHumanReview && <UserCheck className="w-6 h-6 text-rose-400" />}
-            {isRejected && <ShieldAlert className="w-6 h-6 text-red-400" />}
+            {isApproved && <CheckCircle2 className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />}
+            {isOtp && <KeyRound className="w-6 h-6 text-amber-500 dark:text-amber-400" />}
+            {isHumanReview && <UserCheck className="w-6 h-6 text-rose-500 dark:text-rose-400" />}
+            {isRejected && <ShieldAlert className="w-6 h-6 text-red-500 dark:text-red-400" />}
             <span className="text-xl font-extrabold">{result.final_decision}</span>
           </div>
           <span className="text-[10px] opacity-75">
@@ -85,15 +85,15 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
         </div>
 
         {/* Card 2: Overall Enterprise Risk Score */}
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Enterprise Risk Score</span>
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Enterprise Risk Score</span>
           <div className="my-2 flex items-baseline space-x-1">
-            <span className={`text-2xl font-extrabold ${result.overall_risk_score > 0.75 ? 'text-rose-400' : (result.overall_risk_score >= 0.40 ? 'text-amber-400' : 'text-emerald-400')}`}>
+            <span className={`text-2xl font-extrabold ${result.overall_risk_score > 0.75 ? 'text-rose-500 dark:text-rose-400' : (result.overall_risk_score >= 0.40 ? 'text-amber-500 dark:text-amber-400' : 'text-emerald-500 dark:text-emerald-400')}`}>
               {riskPercent}%
             </span>
-            <span className="text-xs text-slate-400">/ 100%</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">/ 100%</span>
           </div>
-          <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
             <div
               className={`h-full transition-all duration-500 ${result.overall_risk_score > 0.75 ? 'bg-rose-500' : (result.overall_risk_score >= 0.40 ? 'bg-amber-500' : 'bg-emerald-500')}`}
               style={{ width: `${riskPercent}%` }}
@@ -102,37 +102,37 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
         </div>
 
         {/* Card 3: Dual Statistical Models */}
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Dual Statistical Layer</span>
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Dual Statistical Layer</span>
           <div className="grid grid-cols-2 gap-2 my-1">
             <div>
-              <span className="text-[10px] text-slate-400 block">Random Forest</span>
-              <span className="text-sm font-bold text-cyan-400">{(result.rf_score * 100).toFixed(1)}%</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Random Forest</span>
+              <span className="text-sm font-bold text-cyan-600 dark:text-cyan-400">{(result.rf_score * 100).toFixed(1)}%</span>
             </div>
             <div>
-              <span className="text-[10px] text-slate-400 block">Isolation Forest</span>
-              <span className="text-sm font-bold text-indigo-400">{(result.if_score * 100).toFixed(1)}%</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Isolation Forest</span>
+              <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">{(result.if_score * 100).toFixed(1)}%</span>
             </div>
           </div>
-          <span className="text-[10px] text-slate-400">Ensemble Prob. + Outlier Metric</span>
+          <span className="text-[10px] text-slate-500 dark:text-slate-400">Ensemble Prob. + Outlier Metric</span>
         </div>
 
         {/* Card 4: Initial Threshold Gate */}
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Initial Gate Engine</span>
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Initial Gate Engine</span>
           <div className="my-1">
-            <span className="text-xs font-semibold text-amber-300 block">{result.initial_threshold_decision}</span>
-            <span className="text-[10px] text-slate-400">Gate threshold setting: &lt; 0.40</span>
+            <span className="text-xs font-semibold text-amber-600 dark:text-amber-300 block">{result.initial_threshold_decision}</span>
+            <span className="text-[10px] text-slate-500 dark:text-slate-400">Gate threshold setting: &lt; 0.40</span>
           </div>
-          <span className="text-[10px] text-slate-400">Fast Path / Multi-Stage Pipeline</span>
+          <span className="text-[10px] text-slate-500 dark:text-slate-400">Fast Path / Multi-Stage Pipeline</span>
         </div>
       </div>
 
       {/* AGENT SCORES BREAKDOWN & COMPONENT CONTRIBUTIONS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left: 4 Concurrent Subsystem Scores */}
-        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center space-x-2">
+        <div className="p-4 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 flex items-center space-x-2">
             <Cpu className="w-4 h-4" />
             <span>Concurrent Subsystem Scores</span>
           </h4>
@@ -141,10 +141,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
             {/* Subsystem 1 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Subsystem 1: Behavioral Telemetry</span>
-                <span className="text-cyan-400 font-bold">{(result.agent_scores.behavior_score * 100).toFixed(1)}%</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Subsystem 1: Behavioral Telemetry</span>
+                <span className="text-cyan-600 dark:text-cyan-400 font-bold">{(result.agent_scores.behavior_score * 100).toFixed(1)}%</span>
               </div>
-              <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
                 <div className="h-full bg-cyan-500" style={{ width: `${result.agent_scores.behavior_score * 100}%` }}></div>
               </div>
             </div>
@@ -152,10 +152,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
             {/* Subsystem 2 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Subsystem 2: Historical Ledger (PostgreSQL)</span>
-                <span className="text-indigo-400 font-bold">{(result.agent_scores.historical_score * 100).toFixed(1)}%</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Subsystem 2: Historical Ledger (PostgreSQL)</span>
+                <span className="text-indigo-600 dark:text-indigo-400 font-bold">{(result.agent_scores.historical_score * 100).toFixed(1)}%</span>
               </div>
-              <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
                 <div className="h-full bg-indigo-500" style={{ width: `${result.agent_scores.historical_score * 100}%` }}></div>
               </div>
             </div>
@@ -163,10 +163,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
             {/* Subsystem 3 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Subsystem 3: Policy Compliance Matrix</span>
-                <span className="text-purple-400 font-bold">{(result.agent_scores.knowledge_score * 100).toFixed(1)}%</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Subsystem 3: Policy Compliance Matrix</span>
+                <span className="text-purple-600 dark:text-purple-400 font-bold">{(result.agent_scores.knowledge_score * 100).toFixed(1)}%</span>
               </div>
-              <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
                 <div className="h-full bg-purple-500" style={{ width: `${result.agent_scores.knowledge_score * 100}%` }}></div>
               </div>
             </div>
@@ -174,10 +174,10 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
             {/* Subsystem 4 */}
             <div>
               <div className="flex justify-between text-xs mb-1">
-                <span className="text-slate-300 font-medium">Subsystem 4: Boundary Constraints Engine</span>
-                <span className="text-rose-400 font-bold">{(result.agent_scores.rule_score * 100).toFixed(1)}%</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Subsystem 4: Boundary Constraints Engine</span>
+                <span className="text-rose-600 dark:text-rose-400 font-bold">{(result.agent_scores.rule_score * 100).toFixed(1)}%</span>
               </div>
-              <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
                 <div className="h-full bg-rose-500" style={{ width: `${result.agent_scores.rule_score * 100}%` }}></div>
               </div>
             </div>
@@ -185,8 +185,8 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
         </div>
 
         {/* Right: Component Contribution Chart */}
-        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center space-x-2">
+        <div className="p-4 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center space-x-2">
             <Activity className="w-4 h-4" />
             <span>Composite Risk Factor Contribution (%)</span>
           </h4>
@@ -194,12 +194,12 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
           <div className="space-y-2">
             {Object.entries(result.component_contributions).map(([key, val]) => (
               <div key={key} className="flex items-center justify-between text-xs">
-                <span className="text-slate-400 capitalize">{key.replace('_', ' ')}</span>
+                <span className="text-slate-600 dark:text-slate-400 capitalize">{key.replace('_', ' ')}</span>
                 <div className="flex items-center space-x-2 w-1/2">
-                  <div className="flex-1 h-1.5 bg-slate-950 rounded-full overflow-hidden">
+                  <div className="flex-1 h-1.5 bg-slate-100 dark:bg-slate-950 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-cyan-500 to-indigo-500" style={{ width: `${val}%` }}></div>
                   </div>
-                  <span className="text-slate-200 font-mono font-bold text-[11px] w-10 text-right">{val}%</span>
+                  <span className="text-slate-700 dark:text-slate-200 font-mono font-bold text-[11px] w-10 text-right">{val}%</span>
                 </div>
               </div>
             ))}
@@ -208,43 +208,43 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onOpenOtp, onDow
       </div>
 
       {/* DECISION VALIDATOR REASONING BOX */}
-      <div className="p-4 rounded-xl bg-indigo-950/20 border border-indigo-800/60 space-y-3">
+      <div className="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-800/60 space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Scale className="w-4 h-4 text-purple-400" />
-            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">
+            <Scale className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">
               Multi-Criteria Algorithmic Decision Validator & Audit
             </h4>
           </div>
-          <span className="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-2 py-0.5 rounded-full">
+          <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 px-2 py-0.5 rounded-full">
             Confidence: {(result.judge_result.confidence_score * 100).toFixed(0)}%
           </span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-[11px] text-slate-300">
-          <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Invariance Check</span>
-            <span className="text-emerald-400 font-bold">\u2713 PASSED</span>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-[11px] text-slate-700 dark:text-slate-300">
+          <div className="p-2 rounded bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-center">
+            <span className="block text-[10px] text-slate-500 dark:text-slate-400">Invariance Check</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">\u2713 PASSED</span>
           </div>
-          <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Reasoning</span>
-            <span className="text-emerald-400 font-bold">\u2713 VALID</span>
+          <div className="p-2 rounded bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-center">
+            <span className="block text-[10px] text-slate-500 dark:text-slate-400">Reasoning</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">\u2713 VALID</span>
           </div>
-          <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Evidence Check</span>
-            <span className="text-emerald-400 font-bold">\u2713 VERIFIED</span>
+          <div className="p-2 rounded bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-center">
+            <span className="block text-[10px] text-slate-500 dark:text-slate-400">Evidence Check</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">\u2713 VERIFIED</span>
           </div>
-          <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center">
-            <span className="block text-[10px] text-slate-400">Constraints</span>
-            <span className="text-emerald-400 font-bold">\u2713 COMPLIANT</span>
+          <div className="p-2 rounded bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-center">
+            <span className="block text-[10px] text-slate-500 dark:text-slate-400">Constraints</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">\u2713 COMPLIANT</span>
           </div>
-          <div className="p-2 rounded bg-slate-900/80 border border-slate-800 text-center col-span-2 md:col-span-1">
-            <span className="block text-[10px] text-slate-400">Regulatory Policy</span>
-            <span className="text-emerald-400 font-bold">\u2713 ALIGNED</span>
+          <div className="p-2 rounded bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-center col-span-2 md:col-span-1">
+            <span className="block text-[10px] text-slate-500 dark:text-slate-400">Regulatory Policy</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">\u2713 ALIGNED</span>
           </div>
         </div>
 
-        <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800/80 text-xs text-slate-200 leading-relaxed font-mono">
+        <div className="p-3 rounded-lg bg-white/90 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800/80 text-xs text-slate-800 dark:text-slate-200 leading-relaxed font-mono">
           {result.judge_result.detailed_explanation}
         </div>
       </div>

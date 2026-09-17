@@ -1,4 +1,4 @@
-# FraudShield — Quantitative Financial Telemetry & Fraud Detection System
+# FraudShield — Quantitative Financial Telemetry & Statistical Risk Pipeline
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-black?logo=vercel)](https://frontend-alpha-ten-sa8mvm5nup.vercel.app)
@@ -7,51 +7,62 @@
 
 > **🌐 Live Production Web Application**: [https://frontend-alpha-ten-sa8mvm5nup.vercel.app](https://frontend-alpha-ten-sa8mvm5nup.vercel.app)
 
-An enterprise-grade, full-stack **Quantitative Banking Fraud Detection System** with modern fintech UI (Stripe / Visa / Mastercard dashboard style). Powered by dual statistical machine learning models (Random Forest probability classifier and Isolation Forest outlier estimator), a 4-subsystem concurrent heuristic inspection pipeline, ChromaDB vector compliance retrieval, multi-criteria decision validation, 2FA Twilio OTP authorization, Security Analyst Triage Queue, and automated PDF audit report generation.
+An enterprise-grade, full-stack **Quantitative Banking Anomaly Detection System** with modern fintech UI (Stripe / Visa / Mastercard telemetry dashboard). Powered by dual statistical machine learning models (Random Forest probability classifier and Isolation Forest outlier estimator), a 4-subsystem concurrent heuristic inspection pipeline, ChromaDB vector compliance retrieval, multi-criteria algorithmic decision validation, 2FA cryptographic SMS OTP authorization, Security Analyst Triage Queue, and automated PDF audit report generation.
 
 <img width="965" height="652" alt="image" src="https://github.com/user-attachments/assets/59734b55-9744-4945-97ba-a8d0debc0525" />
 
+---
+
+## 👨‍💻 Lead System Architect & Developer
+
+| Detail | Information |
+|---|---|
+| **Author** | **Purna Chandra Rao** |
+| **Email** | [purnap909@gmail.com](mailto:purnap909@gmail.com) |
+| **Mobile** | [+91 6304990878](tel:6304990878) |
+| **Project** | FraudShield Quantitative Telemetry & Security Engine |
+| **Live App** | [https://frontend-alpha-ten-sa8mvm5nup.vercel.app](https://frontend-alpha-ten-sa8mvm5nup.vercel.app) |
 
 ---
 
 ## 🌟 Key Features
 
 1. **Transaction Input & Preset Scenarios**:
-   - **5 Required Inputs**: Amount, Transaction Type, Sender Account, Receiver Account, Transaction Time.
-   - **7 Optional Inputs**: Device ID, Device Type, IP Address, Geo Location, Account Balance, Merchant Name, Description.
-   - Pre-configured quick-test buttons: Low Risk ($25), Medium Risk OTP ($4.5k), High Risk ($18.5k).
+   - **5 Required Telemetry Inputs**: Amount, Transaction Type, Sender Account, Receiver Account, Transaction Time.
+   - **7 Contextual Inputs**: Device ID, Device Type, IP Address, Geo Location, Account Balance, Merchant Name, Description.
+   - Pre-configured quick-test buttons: Baseline Risk ($25), Medium Risk 2FA ($4.5k), Anomalous Risk ($18.5k).
 
-2. **Dual Machine Learning Layer**:
-   - **Random Forest Classifier**: Predicts Fraud Probability [0.0 - 1.0].
-   - **Isolation Forest**: Calculates Unsupervised Anomaly Distance Score [0.0 - 1.0].
+2. **Dual Statistical Machine Learning Layer**:
+   - **Random Forest Classifier**: Probability of Anomaly \(P(\text{Fraud}) \in [0.0, 1.0]\).
+   - **Isolation Forest**: Unsupervised Metric Outlier Score [0.0 - 1.0].
 
-3. **Initial Threshold Gate**:
-   - Scores < 0.40 bypass complex agent pipelines for fast-path instant clearance.
+3. **Initial Fast-Path Threshold Gate Engine**:
+   - Telemetry with composite risk < 0.40 triggers deterministic immediate clearance.
 
-4. **LangGraph Parallel Multi-Agent Orchestrator**:
-   - **Agent 1: Behavior Analysis Agent** (spending velocity, device trust, geo shift).
-   - **Agent 2: Historical Fraud Agent** (PostgreSQL chargebacks & failed OTP logs).
-   - **Agent 3: Knowledge Retrieval Agent** (ChromaDB vector search on RBI & AML policy rules).
-   - **Agent 4: Rule Engine Agent** (deterministic policy validation like $10k+ limit, foreign IP, nocturnal transfer).
+4. **Concurrent Heuristic Subsystem Pipeline**:
+   - **Subsystem 1: Behavioral Telemetry Subsystem** (spending velocity, hardware fingerprint, geo shift).
+   - **Subsystem 2: Historical Ledger Subsystem** (PostgreSQL chargeback ledger & authentication attempt records).
+   - **Subsystem 3: Policy Compliance Matrix Subsystem** (ChromaDB vector embedding search on RBI & AML regulatory policies).
+   - **Subsystem 4: Boundary Constraints Engine** (deterministic threshold constraints: $10k limit cap, foreign IP, nocturnal transfer).
 
-5. **Risk Aggregator & Decision Engine**:
-   - Calculates weighted Enterprise Risk Score & percentage contribution breakdown.
-   - Actions: `< 0.40 Approve` | `0.40–0.75 OTP` | `> 0.75 Human Review`.
+5. **Risk Aggregator & Decision Matrix**:
+   - Computes weighted Enterprise Risk Score & percentage contribution breakdown.
+   - Action Paths: `< 0.40 Cleared` | `0.40–0.75 Secondary 2FA Challenge` | `> 0.75 Security Triage Queue`.
 
-6. **LLM-as-a-Judge**:
-   - Validates decision reasoning against 5 criteria: Hallucination Check, Reasoning Consistency, Evidence Verification, Guardrails, Regulatory Compliance.
+6. **Multi-Criteria Algorithmic Decision Validator**:
+   - Audits decision reasoning against 5 formal engineering criteria: Invariance Verification, Reasoning Consistency, Evidence Verification, Guardrail Constraints, Regulatory Compliance.
 
-7. **Twilio 2FA OTP Screen**:
-   - Interactive modal with simulated SMS toast popover and code validation (`123456`).
+7. **Cryptographic 2FA OTP Screen**:
+   - Interactive verification with simulated SMS toast popover and validation code (`123456`).
 
-8. **Human Review Security Console**:
-   - Queue for inspecting high-risk transactions with manual Approve / Reject / Escalate actions.
+8. **Human Review Security Triage Console**:
+   - Real-time queue for inspecting anomalous transactions with manual Approve / Reject / Escalate controls.
 
-9. **Admin Analytics Dashboard**:
-   - KPI metric counters, Recharts trend area charts, risk distribution histograms, dynamic threshold policy sliders, and system health status.
+9. **Enterprise Quantitative Analytics Dashboard**:
+   - KPI telemetry counters, Recharts trend area charts, risk distribution histograms, dynamic policy threshold sliders, and infrastructure health monitoring.
 
 10. **Automated PDF Audit Report Generator**:
-    - Generates downloadable professional audit-ready PDF reports with ReportLab.
+    - Generates downloadable audit-ready PDF reports with ReportLab and in-browser client generator.
 
 ---
 

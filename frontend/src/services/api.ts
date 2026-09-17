@@ -566,6 +566,8 @@ BT
 0 -25 Td
 (Generated: ${new Date().toUTCString()}) Tj
 0 -15 Td
+(Lead System Architect: Purna Chandra Rao  |  purnap909@gmail.com  |  +91 6304990878) Tj
+0 -15 Td
 (Transaction Reference ID: ${tx.transaction_id}) Tj
 0 -25 Td
 (-----------------------------------------------------------------------------------------------------) Tj
