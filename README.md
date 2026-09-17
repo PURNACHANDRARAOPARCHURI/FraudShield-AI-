@@ -1,11 +1,13 @@
-# Enterprise AI Fraud Detection System (FraudShield AI)
+# FraudShield — Quantitative Financial Telemetry & Fraud Detection System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-black?logo=vercel)](https://frontend-alpha-ten-sa8mvm5nup.vercel.app)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/Frontend-React_18-61DAFB.svg)](https://reactjs.org/)
-[![LangGraph](https://img.shields.io/badge/AI-LangGraph_Orchestrator-FF6F61.svg)](https://langchain.com/)
 
-An enterprise-grade, full-stack **AI-Powered Banking Fraud Detection System** with modern fintech UI (Stripe / Visa / Mastercard dashboard style). Powered by dual Machine Learning models, a 4-Agent LangGraph Orchestration Engine, ChromaDB Vector DB compliance retrieval, LLM-as-a-Judge validation, 2FA Twilio OTP authorization, Human Security Triage, and automated PDF audit report generation.
+> **🌐 Live Production Web Application**: [https://frontend-alpha-ten-sa8mvm5nup.vercel.app](https://frontend-alpha-ten-sa8mvm5nup.vercel.app)
+
+An enterprise-grade, full-stack **Quantitative Banking Fraud Detection System** with modern fintech UI (Stripe / Visa / Mastercard dashboard style). Powered by dual statistical machine learning models (Random Forest probability classifier and Isolation Forest outlier estimator), a 4-subsystem concurrent heuristic inspection pipeline, ChromaDB vector compliance retrieval, multi-criteria decision validation, 2FA Twilio OTP authorization, Security Analyst Triage Queue, and automated PDF audit report generation.
 
 <img width="965" height="652" alt="image" src="https://github.com/user-attachments/assets/59734b55-9744-4945-97ba-a8d0debc0525" />
 
@@ -100,6 +102,8 @@ docker-compose up --build
 
 ## 🔗 Repository & Links
 
+- **Live Production Deployment (Vercel)**: [https://frontend-alpha-ten-sa8mvm5nup.vercel.app](https://frontend-alpha-ten-sa8mvm5nup.vercel.app)
+- **Alternate Production Alias**: [https://frontend-dtgofloju-purna6.vercel.app](https://frontend-dtgofloju-purna6.vercel.app)
 - **GitHub Repository**: [https://github.com/PURNACHANDRARAOPARCHURI/FraudShield-AI-](https://github.com/PURNACHANDRARAOPARCHURI/FraudShield-AI-)
 
 ---
